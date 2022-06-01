@@ -30,7 +30,7 @@ function Login() {
     <div className="container m-3 ">
       {!showHome && (
         <div className="row justify-content-center  border">
-          <h2 className="text-center">Login Component</h2>
+          <h2 className="text-center">Login Component v1</h2>
           {/* <div className="col-12 border "> */}
           <div className="col-sm-6  m-3 btn btn-primary">
             <MetaMask
