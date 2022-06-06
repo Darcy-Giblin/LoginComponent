@@ -50,7 +50,7 @@ function Login() {
               setShowHome={setShowHome}
             ></AlgoSign>
           </div>
-          {/* <div className="col-sm-6 m-3 btn btn-primary">
+          <div className="col-sm-6 m-3 btn btn-primary">
             <AppleID
               className=""
               login={login}
@@ -58,7 +58,7 @@ function Login() {
               showHome={showHome}
               setShowHome={setShowHome}
             ></AppleID>
-          </div> */}
+          </div>
           <div className="col-sm-6 m-3 btn btn-primary">
             <Google
               className=""
