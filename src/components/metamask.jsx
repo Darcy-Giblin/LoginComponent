@@ -2,23 +2,17 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 
 function MetaMask(props) {
-  const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
   const [userBalance, setUserBalance] = useState(null);
-  const [connButtonText, setConnButtonText] = useState("Connect Wallet");
   const [showButton, setShowButton] = useState(true);
- 
-  const{login, setlogin, showHome, setShowHome}=props
-  // this.state = {
-  //   showButton: true
-  // }
-  // const showButton = this.state.showButton;
+
+  const { setlogin, showHome, setShowHome } = props;
 
   const hideButton = () => {
     setShowButton(!showButton);
   };
 
-  async function connect(onConnected) {
+  async function connect() {
     if (!window.ethereum) {
       alert("Get MetaMask!");
       return;
@@ -28,9 +22,8 @@ function MetaMask(props) {
       method: "eth_requestAccounts",
     });
     hideButton();
-    setShowHome(!showHome)
+    setShowHome(!showHome);
     accountChangedHandler(accounts[0]);
-    // return(<h1>{accounts[0]}</h1>)
   }
 
   const accountChangedHandler = (newAccount) => {
@@ -52,21 +45,20 @@ function MetaMask(props) {
   return (
     <div>
       {showButton && (
-        <button className="btn btn-primary" onClick={() => connect()}>Login with Metamask</button>
+        <button className="btn btn-primary" onClick={() => connect()}>
+          Login with Metamask
+        </button>
       )}
       {!showButton && (
         <div>
           <div className="accountDisplay">
-            {" "}
             <p>Address: {defaultAccount}</p>
           </div>
           <div className="balanceDisplay">
-            {" "}
             <p>Balance: {userBalance}</p>
           </div>
         </div>
       )}
-      {errorMessage}
     </div>
   );
 }

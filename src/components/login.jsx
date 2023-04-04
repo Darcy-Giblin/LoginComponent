@@ -3,7 +3,7 @@ import MetaMask from "./metamask";
 import AlgoSign from "./algoSign";
 import AppleID from "./appleID";
 import Google from "./google";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { GoogleLogout } from "react-google-login";
 
 function Login() {
   const clientId =
@@ -18,7 +18,6 @@ function Login() {
   const [showHome, setShowHome] = useState(false);
   const [login, setlogin] = useState(true);
   const [google, setGoogle] = useState(false);
-  // const [user, setUser] = useState(null);
 
   const hideHome = () => {
     setGoogle(false);
@@ -31,7 +30,6 @@ function Login() {
       {!showHome && (
         <div className="row justify-content-center  border">
           <h2 className="text-center">Login Component v1</h2>
-          {/* <div className="col-12 border "> */}
           <div className="col-sm-6  m-3 btn btn-primary">
             <MetaMask
               className=""
@@ -71,7 +69,6 @@ function Login() {
             ></Google>
           </div>
         </div>
-        // </div>
       )}
       {showHome && (
         <div className="row  text-center">

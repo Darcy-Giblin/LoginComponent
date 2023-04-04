@@ -5,7 +5,7 @@ function AppleID(props) {
   const [showButton, setShowButton] = useState(true);
   const [defaultAccount, setDefaultAccount] = useState(null);
 
-  const { login, setlogin, showHome, setShowHome } = props;
+  const { setlogin, showHome, setShowHome } = props;
 
   const hideButton = () => {
     setShowHome(!showHome);
@@ -13,7 +13,6 @@ function AppleID(props) {
   };
 
   const responseFacebook = (response) => {
-    console.log(response);
     setlogin(response.name);
     setDefaultAccount(response.name);
     hideButton();
@@ -38,7 +37,6 @@ function AppleID(props) {
       {!showButton && (
         <div>
           <div className="accountDisplay">
-            {" "}
             <p>Name: {defaultAccount}</p>
           </div>
         </div>
